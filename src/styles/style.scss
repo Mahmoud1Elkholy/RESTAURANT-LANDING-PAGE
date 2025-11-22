@@ -1,0 +1,237 @@
+/* =================== base (original) =================== */
+body {
+  background-image: url("/src/images/Backgorund2.jpg");
+  color: #ff9035;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 { font-size: 45px; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+#container { padding: 0.1rem; }
+
+#logo { max-width: 150px; height: auto; }
+
+.head {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav {
+  width: 600px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(119, 99, 62, 0.315);
+}
+
+.menu {
+  cursor: pointer;
+  width: 20%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.menu:hover { background-color: #50482f79; }
+
+/* =================== improved phone badge & info =================== */
+/* Old #phone rules replaced by more robust styles below */
+
+/* container for phone badge (keeps existing layout) */
+#phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: auto;            /* let it size based on content */
+  padding: 0;             /* visual padding moved to .phone-number */
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* icon returned by phoneImag() */
+.phone-icon, #phoneIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #fff; /* gives contrast if image has transparency */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(3,8,20,0.12);
+}
+
+/* wrapper for label + number */
+.phone-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+}
+
+/* small label - e.g. "اتصل الآن" */
+.phone-label {
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0.95;
+  font-weight: 600;
+  /* subtle text shadow to read on image backgrounds */
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+/* the visible number badge */
+.phone-number {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #071021;
+  background: linear-gradient(90deg,#ffdf8f,#ffb24a);
+  padding: 8px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(3,8,20,0.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+  white-space: nowrap;
+}
+
+/* hover/active */
+.phone-number:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(3,8,20,0.35);
+}
+
+/* keep .info generic style for other uses but avoid conflicting visuals */
+.info {
+  color: rgb(53, 7, 1);
+  width: 100px;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  background-color: rgb(212, 147, 25);
+}
+
+.info:hover {
+  background-color: rgb(236, 172, 52);
+  cursor: pointer;
+}
+
+/* =================== rest of original styles =================== */
+section {
+  margin-left: 15rem;
+  margin-top: 10rem;
+  width: 600px;
+  height: auto;
+}
+
+p { text-justify: auto; }
+
+#phoneIcon { max-width: 40px; max-height: 40px; }
+
+.foodMenu {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px;
+  background-color: #0f0f0f8f;
+  border-radius: 30px;
+  padding: 15px;
+  grid-template-columns: repeat(3, 365px);
+  gap: 20px;
+}
+
+.menuImage {
+  max-width: 365px;
+  border: 2.5px solid #ff9035;
+  border-radius: 30px;
+}
+
+#historyFrame {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60rem;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+#historyImage {
+  margin-top: 30px;
+  justify-self: center;
+  max-width: 400px;
+  border: 2.5px solid #ff9035;
+  border-radius: 30px;
+}
+
+.galeryInfo {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.galeryImage {
+  max-width: 345px;
+  border: 2.5px solid #ff9035;
+  border-radius: 30px;
+}
+
+#contactFrame {
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#contact {
+  width: auto;
+  justify-self: center;
+}
+
+#map {
+  width: 450px;
+  height: 450px;
+  justify-self: center;
+  border: 2.5px solid #ff9035;
+  border-radius: 30px;
+}
+
+/* =================== responsiveness improvements =================== */
+@media (max-width: 1024px) {
+  nav { width: 100%; }
+  .container { flex-direction: column; margin-top: 2rem; margin-left: 2rem; margin-right: 2rem; }
+  section { margin-left: 0; margin-top: 2rem; width: 100%; }
+  .foodMenu { width: 100%; grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .menu { padding: 12px; font-size: 14px; }
+  #phone { gap: 8px; }
+  .phone-label { font-size: 11px; }
+  .phone-number { font-size: 14px; padding: 6px 10px; border-radius: 10px; }
+  .head { justify-content: space-between; padding: 8px; }
+  #map { width: 100%; height:300px;}
+}
